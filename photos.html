@@ -1,0 +1,25 @@
+---
+layout: default
+title: Photos
+permalink: /photos/
+description: "Photos"
+---
+<!-- https://github.com/michaelx/jekyll-photos -->
+
+<h1>Photo series</h1>
+<ul>
+  {% comment %}
+    Get all "photo_set" pages and display a list with links to them.
+  {% endcomment %}
+  {% assign photo_pages = site.pages | where: "layout", "photo_set" %}
+  {% for photo_page in photo_pages %}
+  <li style="list-style-type: none; padding-bottom: 4em; padding-top: 4em;">
+      <a href="{{ photo_page.url | prepend: site.baseurl }}" style="text-decoration:none; color: inherit;">
+        <div>
+          <img src="/images/photos/{{ photo_page.photos.set }}-{{ photo_page.photos.main }}.jpg">
+          <h3 style="padding: 1em;">{{ photo_page.title }}</h3>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
