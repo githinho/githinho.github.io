@@ -8,10 +8,10 @@ layout: default
 <ul>
   {% for i in (1..num) %}
   <li style="list-style-type: none; padding-bottom: 4em; padding-top: 4em;">
-    <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+    <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
   </li>
   {% endfor %}
 </ul>
 <div>
-  <a href="{{ site.baseurl }}/photos/">View All Photo Serials</a>
+  <a href="{{ site.baseurl }}/photos/">View All Photo Series</a>
 </div>
