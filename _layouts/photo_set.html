@@ -8,7 +8,9 @@ layout: default
 <ul>
   {% for i in (1..num) %}
   <li style="list-style-type: none; padding-bottom: 4em; padding-top: 4em;">
-    <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+    <a class="image-link" href="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg">
+      <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+    </a>
   </li>
   {% endfor %}
 </ul>
