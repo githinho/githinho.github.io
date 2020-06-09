@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Eugen Druzin
+Eugen Družin
+
+edruzin+me@gmail.com
