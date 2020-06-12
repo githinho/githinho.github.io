@@ -13,7 +13,7 @@ description: "Photos"
   {% endcomment %}
   {% assign photo_pages = site.pages | where: "layout", "photo_set" %}
   {% for photo_page in photo_pages %}
-  <li style="list-style-type: none; padding-bottom: 4em; padding-top: 4em;">
+  <li style="list-style-type: none; padding-bottom: 2em; padding-top: 2em;">
       <a href="{{ photo_page.url | prepend: site.baseurl }}" style="text-decoration:none; color: inherit;">
         <div>
           <img src="/images/photos/{{ photo_page.photos.set }}/{{ photo_page.photos.set }}-{{ photo_page.photos.main }}.jpg">
