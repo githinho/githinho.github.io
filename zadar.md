@@ -2,7 +2,7 @@
 layout: photo_set
 title: Zadar - 2020.
 permalink: /photos/zadar/
-description: 
+description: "KAJ TI STARA RADI ZADAR?"
 
 photos:
     set: zadar
