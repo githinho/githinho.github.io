@@ -2,9 +2,15 @@
 
 Personal website
 
-## Run
+## Development
 
-```bundle exec jekyll serve```
+```
+# get dependencies
+bundle install
+
+# run development server
+bundle exec jekyll serve
+```
 
 ## License
 

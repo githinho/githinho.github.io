@@ -4,16 +4,127 @@ layout: default
 
 {% assign num = page.photos.size %}
 
-<h1>{{ page.title }}</h1>
-<ul>
-  {% for i in (1..num) %}
-  <li style="list-style-type: none; padding-bottom: 4em; padding-top: 4em;">
-    <a class="image-link" href="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg">
-      <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
-    </a>
-  </li>
-  {% endfor %}
-</ul>
-<div>
-  <a href="{{ site.baseurl }}/photos/">View All Photo Series</a>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="text-center">
+                {{ page.title }}
+            </h1>
+
+            <div id="gallery" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                {% for i in (1..num) %}
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"
+                 style="padding: 4em 0 4em 0">
+                    <a href="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg"
+                       itemprop="contentUrl" data-size="auto">
+                        <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg"
+                             itemprop="thumbnail" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+                    </a>
+                </figure>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a href="{{ site.baseurl }}/photos/">View All Photo Series</a>
+    </div>
 </div>
+
+<!-- Everything under this line is related to PhotoSwipe gallery -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+           It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Import jQuery and PhotoSwipe Scripts -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe-ui-default.min.js"></script>
+
+<script>
+    'use strict';
+
+    (function ($) {
+        const items = [];
+
+        $('#gallery').find('figure').each(function () {
+            var $link = $(this).find('a'),
+                item = {
+                    src: $link.attr('href'), w: 0, h: 0
+                };
+            items.push(item);
+        });
+
+        $('#gallery a').click(function (event) {
+            event.preventDefault();
+
+            const $pswp = $('.pswp')[0];
+
+            const options = {
+                index: $(this).parent('figure').index(),
+                bgOpacity: 0.85,
+                showAnimationDuration: 0
+            };
+
+            const gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+
+            gallery.listen('imageLoadComplete', function (index, item) {
+                if (item.h < 1 || item.w < 1) {
+                    let img = new Image()
+                    img.onload = () => {
+                        item.w = img.width
+                        item.h = img.height
+                        // gallery.invalidateCurrItems() // TODO: this caused images to flicker
+                        gallery.updateSize(true)
+                    }
+                    img.src = item.src
+                }
+            });
+            gallery.init();
+        });
+    }(jQuery));
+</script>
