@@ -13,7 +13,8 @@ layout: default
 
             <div id="gallery" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
                 {% for i in (1..num) %}
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"
+                 style="padding: 4em 0 4em 0">
                     <a href="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg"
                        itemprop="contentUrl" data-size="auto">
                         <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg"
