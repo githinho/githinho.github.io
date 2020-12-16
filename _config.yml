@@ -36,6 +36,7 @@ plugins:
 header_pages:
   - index.markdown
   - photos.html
+  - posts.html
   - about.markdown
 
 exclude:

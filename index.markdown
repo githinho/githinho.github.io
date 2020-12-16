@@ -9,7 +9,7 @@ permalink:
 
 <ul class="post-list">
     <!-- <h1>Latest Post</h1> -->
-    {% for post in site.posts limit:1 %}
+    {% for post in site.posts limit:3 %}
         <li>
             <h2>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
