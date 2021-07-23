@@ -7,6 +7,6 @@ added: 23.07.2021.
 
 photos:
     set: toledo
-    size: 20
-    main: 17
+    size: 21
+    main: 21
 ---
