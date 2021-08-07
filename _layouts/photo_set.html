@@ -14,11 +14,11 @@ layout: default
             <div id="gallery" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
                 {% for i in (1..num) %}
                 <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"
-                 style="padding: 4em 0 4em 0">
+                 style="padding: 4em 0 4em 0; display: flex; justify-content: center;">
                     <a href="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg"
                        itemprop="contentUrl" data-size="auto">
                         <img src="{{ site.baseurl }}/images/photos/{{ page.photos.set }}/{{ page.photos.set }}-{{ i }}.jpg"
-                             itemprop="thumbnail" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}">
+                             itemprop="thumbnail" alt="Photo {{ i }} from {{ page.photos.set | capitalize }}" style="max-height: 80vh;">
                     </a>
                 </figure>
                 {% endfor %}
