@@ -7,6 +7,6 @@ added: 24.08.2021.
 
 photos:
     set: pamplona
-    size: 7
+    size: 6
     main: 2
 ---
