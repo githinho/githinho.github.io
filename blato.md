@@ -3,7 +3,7 @@ layout: photo_set
 title: Blato - 2021.
 permalink: /photos/blato/
 description: "Predizborni trik"
-added: 24.05.2021.
+added: 2021-05-24
 
 photos:
     set: blato

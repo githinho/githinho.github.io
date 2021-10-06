@@ -3,7 +3,7 @@ layout: photo_set
 title: Brijuni - 2021.
 permalink: /photos/brijuni/
 description: "Tito knew to pick the place"
-added: 29.04.2021.
+added: 2021-04-29
 
 photos:
     set: brijuni

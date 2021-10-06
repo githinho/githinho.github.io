@@ -3,7 +3,7 @@ layout: photo_set
 title: Lokrum - 2020.
 permalink: /photos/lokrum/
 description: "Lokrum is an island next to the city of Dubrovnik."
-added: 19.11.2020.
+added: 2020-11-19
 
 photos:
     set: lokrum

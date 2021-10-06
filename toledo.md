@@ -3,7 +3,7 @@ layout: photo_set
 title: Toledo - 2021.
 permalink: /photos/toledo/
 description: "Former capital of Spain"
-added: 23.07.2021.
+added: 2021-07-23
 
 photos:
     set: toledo

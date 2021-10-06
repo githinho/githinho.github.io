@@ -3,7 +3,7 @@ layout: photo_set
 title: San Sebastian - 2021.
 permalink: /photos/san-sebastian/
 description: "I like to be wined and dined..."
-added: 05.10.2021.
+added: 2021-10-05
 
 photos:
     set: san-sebastian
