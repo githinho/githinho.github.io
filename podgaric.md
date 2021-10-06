@@ -3,7 +3,7 @@ layout: photo_set
 title: Podgarić - 2020.
 permalink: /photos/podgaric/
 description: "Spomenik revolucije naroda Moslavine"
-added: 02.08.2020.
+added: 2020-08-02
 
 photos:
     set: podgaric

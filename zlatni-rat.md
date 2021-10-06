@@ -3,7 +3,7 @@ layout: photo_set
 title: Zlatni Rat - 2020.
 permalink: /photos/zlatni-rat/
 description: "Famous beach on the island of Broč"
-added: 21.09.2020.
+added: 2020-09-21
 
 photos:
     set: zlatni-rat
