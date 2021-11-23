@@ -2,7 +2,7 @@
 layout: photo_set
 title: Lisbon - 2021.
 permalink: /photos/lisbon/
-description: "A few hours with the Romans"
+description: ""
 added: 2021-11-23
 
 photos:
