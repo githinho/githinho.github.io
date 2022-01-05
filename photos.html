@@ -11,7 +11,7 @@ description: "Photos"
   {% comment %}
     Get all "photo_set" pages and display a list with links to them.
   {% endcomment %}
-  {% assign photo_pages = site.pages | where: "layout", "photo_set" | sort: "added" | reverse  %}
+  {% assign photo_pages = site.galleries | where: "layout", "photo_set" | sort: "added" | reverse  %}
   {% for photo_page in photo_pages %}
   <li style="list-style-type: none; padding-bottom: 2em; padding-top: 2em;">
       <a href="{{ photo_page.url | prepend: site.baseurl }}" style="text-decoration:none; color: inherit;">
