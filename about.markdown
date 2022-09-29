@@ -6,6 +6,6 @@ permalink: /about/
 
 Eugen Družin
 
-edruzin+me@gmail.com
+eugen@edruzin.me
 
 ![me](/images/me.jpg)
