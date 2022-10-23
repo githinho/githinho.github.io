@@ -1,6 +1,6 @@
 ---
 layout: photo_set
-title: Granada - 2022.
+title: Granada - 2021.
 permalink: /photos/granada/
 description: "Hill of strangers"
 added: 2022-10-17
