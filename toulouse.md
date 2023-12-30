@@ -7,6 +7,6 @@ added: 2023-12-30
 
 photos:
     set: toulouse
-    size: 1
-    main: 7
+    size: 7
+    main: 4
 ---
