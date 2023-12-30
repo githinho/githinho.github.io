@@ -7,6 +7,6 @@ added: 2023-12-30
 
 photos:
     set: girona
-    size: 2
-    main: 8
+    size: 8
+    main: 2
 ---
