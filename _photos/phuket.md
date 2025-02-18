@@ -7,6 +7,6 @@ added: 2024-07-14
 
 photos:
     set: phuket
-    size: 9
-    main: 9
+    size: 8
+    main: 1
 ---
