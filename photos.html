@@ -11,7 +11,6 @@ description: "Photos"
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 1rem;
     max-width: 900px;
     margin: 0 auto;
   }
@@ -68,7 +67,11 @@ description: "Photos"
   {% assign photo_pages = site.pages | where: "layout", "photo_set" | sort: "added" | reverse  %}
   {% for photo_page in photo_pages %}
     <a href="{{ photo_page.url | prepend: site.baseurl }}" class="photo-tile">
-      <img src="/images/photos/{{ photo_page.photos.set }}/{{ photo_page.photos.set }}-{{ photo_page.photos.main }}.jpg" alt="{{ photo_page.title }}">
+      <img src="/images/photos/{{ photo_page.photos.set }}/{{ photo_page.photos.set }}-{{ photo_page.photos.main }}.jpg" 
+           alt="{{ photo_page.title }}" 
+           loading="lazy" 
+           decoding="async" 
+           fetchpriority="low">
       <h3>{{ photo_page.title }}</h3>
     </a>
   {% endfor %}
